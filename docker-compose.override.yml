@@ -1,0 +1,11 @@
+services:
+  python:
+    volumes:
+      - ./application:/application
+    # env_file:
+    #   - .env
+    environment:
+      ENV_NAME: "local"
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
