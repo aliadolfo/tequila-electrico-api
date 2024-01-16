@@ -1,0 +1,10 @@
+version: '3'
+services:
+  python:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        - GITHUB_TOKEN
+    image: tequila-electrico-api-python:${IMAGE_TAG:-latest}
+
