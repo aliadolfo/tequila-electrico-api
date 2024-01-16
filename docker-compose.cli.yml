@@ -1,0 +1,19 @@
+version: '3'
+services:
+  manage:
+    user: "${USER_ID}:${GROUP_ID}"
+    image: tequila-electrico-api-python:${IMAGE_TAG:-latest}
+    init: true
+    volumes:
+      - .:/application/application
+    entrypoint: python manage.py
+
+  python:
+    user: "${USER_ID}:${GROUP_ID}"
+    image: tequila-electrico-api-python:${IMAGE_TAG:-latest}
+    init: true
+    volumes:
+      - .:/application
+    entrypoint: python
+
+
