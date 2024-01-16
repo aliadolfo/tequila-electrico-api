@@ -8,8 +8,10 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+WORKDIR /application
+
 # Install dependencies:
 COPY requirements.txt .
 RUN pip install --quiet -r requirements.txt
 
-
+COPY application /application
