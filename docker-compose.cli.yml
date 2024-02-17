@@ -5,7 +5,7 @@ services:
     image: tequila-electrico-api-python:${IMAGE_TAG:-latest}
     init: true
     volumes:
-      - .:/application/application
+      - .:/application/app
     entrypoint: python manage.py
 
   python:
@@ -15,5 +15,3 @@ services:
     volumes:
       - .:/application
     entrypoint: python
-
-
