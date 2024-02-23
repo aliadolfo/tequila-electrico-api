@@ -7,4 +7,10 @@ services:
       args:
         - GITHUB_TOKEN
     image: tequila-electrico-api-python:${IMAGE_TAG:-latest}
+    depends_on:
+      - db
+  db:
+    image: postgres:15
 
+volumes:
+  postgres_data:

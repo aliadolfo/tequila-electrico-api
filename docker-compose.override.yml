@@ -11,3 +11,12 @@ services:
       - ./.env
     ports:
       - 8000:8000
+    container_name: ${APP_NAME}_python
+
+  db:
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=hello_django
+      - POSTGRES_PASSWORD=hello_django
+      - POSTGRES_DB=hello_django_dev
